@@ -17,8 +17,12 @@ spec:
           triggeredOn:
             - event: "build-in-develop.delivery.finished"
           tasks:
+            - name: "r4-approval"
+              properties:
+                pass: "manual"
+                warning: "manual"
             - name: "deployment"
-            - name: "test"
+            
     - name: "create-release-branch"
       sequences:
         - name: "delivery"
